@@ -1,5 +1,7 @@
-package com.adempolat.otovinnapp
+package com.adempolat.otovinnapp.view
 
+import android.content.Context
+import android.graphics.Color
 import android.os.Bundle
 import android.text.InputType
 import android.view.LayoutInflater
@@ -9,17 +11,25 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
+import com.adempolat.otovinnapp.repository.LoginRepository
+import com.adempolat.otovinnapp.viewmodel.LoginViewModel
+import com.adempolat.otovinnapp.R
 import com.adempolat.otovinnapp.databinding.FragmentLoginBinding
+import com.adempolat.otovinnapp.service.ApiClient
+import com.adempolat.otovinnapp.utils.saveToken
+import com.adempolat.otovinnapp.utils.showCustomToast
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
+// LoginFragment.kt
+@AndroidEntryPoint
 class LoginFragment : Fragment() {
 
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: LoginViewModel by viewModels {
-        LoginViewModelFactory(LoginRepository(ApiClient.apiService))
-    }
+    private val viewModel: LoginViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,11 +56,15 @@ class LoginFragment : Fragment() {
             viewModel.loginResult.collect { result ->
                 result?.let {
                     if (it.code == 100) {
-                        // Başarılı giriş
-                        Toast.makeText(context, "Giriş Başarılı: ${it.token}", Toast.LENGTH_SHORT).show()
+                        saveToken(it.token ?: "",requireContext())
+                        findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+                        context?.showCustomToast(getString(R.string.success_login), requireContext().getColor(R.color.colorPrimary), R.drawable.logo)
+
                     } else {
                         // Hatalı giriş
-                        Toast.makeText(context, "Giriş Hatası: ${it.message}", Toast.LENGTH_SHORT).show()
+                        context?.showCustomToast(getString(R.string.error_login, it.message),
+                            requireContext().getColor(R.color.colorError), R.drawable.logo)
+
                     }
                 }
             }
@@ -68,9 +82,9 @@ class LoginFragment : Fragment() {
         binding.etPassword.setSelection(binding.etPassword.text.length)
     }
 
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
 }
-

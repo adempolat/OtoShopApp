@@ -1,5 +1,8 @@
-package com.adempolat.otovinnapp
+package com.adempolat.otovinnapp.repository
 
+import com.adempolat.otovinnapp.data.request.LoginRequest
+import com.adempolat.otovinnapp.data.response.LoginResponse
+import com.adempolat.otovinnapp.service.ApiService
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow

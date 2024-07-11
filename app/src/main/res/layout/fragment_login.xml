@@ -6,12 +6,13 @@
     android:gravity="center"
     android:layout_margin="32dp"
     android:orientation="vertical"
-    tools:context=".LoginFragment">
+    tools:context=".view.LoginFragment">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Giriş Yap"
+        android:text="@string/login"
+        android:fontFamily="@font/lato"
         android:textSize="26sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -22,7 +23,8 @@
         android:id="@+id/etUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Kullanıcı adınızı yazınız"
+        android:hint="@string/enter_user_name"
+        android:fontFamily="@font/lato"
         android:padding="16dp"
         android:background="@drawable/edit_text_background" />
 
@@ -35,7 +37,8 @@
             android:id="@+id/etPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Şifrenizi yazınız"
+            android:hint="@string/enter_password"
+            android:fontFamily="@font/lato"
             android:inputType="textPassword"
             android:padding="16dp"
             android:background="@drawable/edit_text_background" />
@@ -55,7 +58,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Giriş Yap"
+        android:fontFamily="@font/lato"
+        android:text="@string/login"
         android:backgroundTint="#59af57"
         android:textColor="@android:color/white"
         android:padding="16dp"

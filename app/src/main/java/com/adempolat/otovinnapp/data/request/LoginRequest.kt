@@ -1,4 +1,4 @@
-package com.adempolat.otovinnapp
+package com.adempolat.otovinnapp.data.request
 
 data class LoginRequest(
     val username: String,

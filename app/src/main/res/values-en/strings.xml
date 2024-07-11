@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">OtoVinnApp</string>
+    <string name="token_invalid_or_missing">Token is invalid or missing</string>
+    <string name="error_occurred">Error: %1$d</string>
+    <string name="error_occurred2">Hata: %1$s</string>
+    <string name="speech_prompt">Please speak</string>
+    <string name="nearby">Nearby</string>
+    <string name="recent_services">Recent Services</string>
+    <string name="best_of_week">Best of the Week</string>
+    <string name="campaigns">Campaigns</string>
+    <string name="search">Search</string>
+    <string name="home">Home</string>
+    <string name="mybasket">My Basket</string>
+    <string name="my_cars">My Cars</string>
+    <string name="profile">Profile</string>
+    <string name="make_an_appointment">Make an appointment</string>
+    <string name="add_favorites">Add Favorites</string>
+    <string name="remove_from_favorites">Remove From Favorites</string>
+    <string name="success_login">Success Login</string>
+    <string name="error_login">Error Login: %1$s</string>
+    <string name="login">Login</string>
+    <string name="enter_user_name">Enter Username</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="error_audio">Ses hatası</string>
+    <string name="error_client">İstemci hatası</string>
+    <string name="error_permissions">Yetersiz izinler</string>
+    <string name="error_network">Ağ hatası</string>
+    <string name="error_network_timeout">Ağ zaman aşımı hatası</string>
+    <string name="error_no_match">Eşleşme yok</string>
+    <string name="error_busy">Sistem meşgul</string>
+    <string name="error_server">Sunucu hatası</string>
+    <string name="error_timeout">Konuşma zaman aşımı</string>
+    <string name="error_unknown">Bilinmeyen hata</string>
+
+</resources>

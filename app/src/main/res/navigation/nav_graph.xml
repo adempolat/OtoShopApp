@@ -3,11 +3,42 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.adempolat.otovinnapp.LoginFragment"
+        android:name="com.adempolat.otovinnapp.view.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.adempolat.otovinnapp.view.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.adempolat.otovinnapp.view.CartFragment"
+        android:label="Sepetim"
+        tools:layout="@layout/fragment_cart" />
+
+    <fragment
+        android:id="@+id/toolsFragment"
+        android:name="com.adempolat.otovinnapp.view.ToolsFragment"
+        android:label="Araçlarım"
+        tools:layout="@layout/fragment_tools" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.adempolat.otovinnapp.view.ProfileFragment"
+        android:label="Profil"
+        tools:layout="@layout/fragment_profile" />
 </navigation>

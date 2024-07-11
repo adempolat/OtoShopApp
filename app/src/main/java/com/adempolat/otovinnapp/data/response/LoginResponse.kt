@@ -1,4 +1,4 @@
-package com.adempolat.otovinnapp
+package com.adempolat.otovinnapp.data.response
 
 data class LoginResponse(
     val code: Int,

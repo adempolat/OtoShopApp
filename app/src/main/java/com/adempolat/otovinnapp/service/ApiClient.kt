@@ -1,13 +1,12 @@
-package com.adempolat.otovinnapp
+package com.adempolat.otovinnapp.service
 
+import com.adempolat.otovinnapp.utils.Constants.BASE_URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiClient {
-    private const val BASE_URL = "https://testinternalpayv2.otovinn.com/"
-
     val retrofit: Retrofit = Retrofit.Builder()
         .baseUrl(BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
